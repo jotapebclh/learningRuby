@@ -12,12 +12,12 @@ numero_secreto = 175
 
 puts "Número escolhido, que tal adivinha-lo?"
 
-tentativas = 3
+limite_de_tentativas = 5
 
-for tentativas in 1..3 do
+for tentativas in 1..limite_de_tentativas
     
     puts "\n"
-    puts "Tentativa " + tentativas.to_s
+    puts "Tentativa " + tentativas.to_s + " de " + limite_de_tentativas.to_s
     puts "Entre com o seu número"
     chute = gets
     
@@ -29,12 +29,17 @@ for tentativas in 1..3 do
     
     if acertou
         puts "Acertou!"
+        break
     else
         maior = numero_secreto > chute.to_i
         if maior
             puts "O número secreto é maior."
+            puts "*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*"
+            puts "\n"
         else
             puts "O número secreto é menor."
+            puts "*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*"
+            puts "\n"
         end
     end
     
